@@ -7,7 +7,8 @@
     "start": "electron .",
     "watch": "nodemon --exec electron .",
     "reset": "git reset --hard",
-    "build": "electron-builder -l"
+    "build": "electron-builder -l",
+    "release": "electron-builder -l -p 'onTagOrDraft'"
   },
   "repository": "https://github.com/stackacademytv/master-electron",
   "homepage": "https://github.com/stackacademytv/master-electron",
@@ -24,11 +25,15 @@
     "nodemon": "^2.0.0"
   },
   "dependencies": {
+    "electron-updater": "^4.6.1",
     "electron-window-state": "^5.0.3"
   },
   "build": {
-    "appId": "com.stackacademytv.readit",
+    "appId": "com.test.readit",
     "copyright": "Copyright Stackacademytv",
+    "publish": {
+      "provider": "github"
+    },
     "mac": {
       "category": "public.app-category.producitivity",
       "target": "dmg"
